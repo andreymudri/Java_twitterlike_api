@@ -1,5 +1,7 @@
 package com.twitterlike.API.models;
 
+import java.util.UUID;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -19,12 +21,12 @@ public class UserModel {
   
   @Id
   @GeneratedValue(strategy = GenerationType.UUID)
-  private Long id;
+  private UUID id;
 
   @Column(unique = true, nullable = false)
   private String username;
 
-  @Column
+  @Column(nullable = false)
   private String avatar;
 
 }
