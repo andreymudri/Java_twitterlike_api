@@ -16,8 +16,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "posts")
-public class PostModel {
+@Table(name = "tweets")
+public class TweetsModel {
 
   @Id
   @GeneratedValue(strategy = GenerationType.UUID)
@@ -25,7 +25,7 @@ public class PostModel {
 
   @ManyToOne
   @JoinColumn(name = "userId")
-  private UserModel user;
+  private UserModel userId;
 
   @Column
   private String text;

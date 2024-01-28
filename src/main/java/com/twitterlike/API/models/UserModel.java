@@ -2,6 +2,8 @@ package com.twitterlike.API.models;
 
 import java.util.UUID;
 
+import com.twitterlike.API.dtos.UserDTO;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -18,7 +20,12 @@ import lombok.NoArgsConstructor;
 @Entity
 @Table(name = "users")
 public class UserModel {
-  
+
+  public UserModel(UserDTO userDto) {
+    this.username = userDto.getUsername();
+    this.avatar = userDto.getAvatar();
+  }
+
   @Id
   @GeneratedValue(strategy = GenerationType.UUID)
   private UUID id;
